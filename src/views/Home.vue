@@ -1,11 +1,14 @@
 <template>
   <div class="home">
+    <vue-headful
+        title="SmartQ"
+    />
     <v-row class="mx-12 pt-12">
         <v-col cols="8">
             <ClinicList :clinics="clinics"/>
         </v-col>
-        <v-col cols="1"></v-col>
-        <v-col cols="3">
+        
+        <v-col cols="4">
             <MakeAppt :items="items"/>
         </v-col>
     </v-row>
@@ -36,12 +39,9 @@ export default {
                     'Pail 2'
                 ],
             clinics: [
-                {name: 'paul clinic', address: 'paul house', queue: '12', waitTime: '2 hours'},
-                {name: 'hc clinic', address: 'paul house', queue: '12', waitTime: '2 hours'},
-                {name: 'ethel clinic', address: 'paul house', queue: '12', waitTime: '2 hours'},
-                {name: 'brem clinic', address: 'paul house', queue: '12', waitTime: '2 hours'},
-                {name: 'daryl clinic', address: 'paul house', queue: '12', waitTime: '2 hours'},
-                {name: 'daryl2 clinic', address: 'paul house', queue: '12', waitTime: '2 hours'},
+                {name: 'SMU Clinic', address: '70 Stamford Rd, #B1-21 Li Ka Shing Library, Singapore 178901', queue: '5', waitTime: '1 hr'},
+                {name: 'Singapura Clinic', address: '27 Bencoolen St, Singapore 189620', queue: '12', waitTime: '2 hr'},
+                {name: 'United Clinic', address: '35 Selegie Rd, #05-06 Parklane Mall, Singapore 188307', queue: '6', waitTime: '1 hr'},
             ]
         }
     },

@@ -1,8 +1,10 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
+import vueHeadful from 'vue-headful';
 import vuetify from './plugins/vuetify';
 
+Vue.component('vue-headful', vueHeadful);
 Vue.config.productionTip = false
 
 new Vue({

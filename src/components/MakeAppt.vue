@@ -1,5 +1,21 @@
 <template>
     <div>
+        <v-snackbar
+            v-model="snackbar"
+            :timeout="timeout"
+        >
+        {{ snackbarText }}
+            <template v-slot:action="{ attrs }">
+                <v-btn
+                color="blue"
+                text
+                v-bind="attrs"
+                @click="snackbar = false"
+                >
+                Close
+                </v-btn>
+            </template>
+        </v-snackbar>
         <v-card class="pa-8" height="530px" width="100%">
             <div class="apptheader blue--text text-lg-center">
                 MAKE APPOINTMENT
@@ -92,11 +108,16 @@ export default {
             selectedClinic: '',
             selectedGender: '',
             gender: ['Male', 'Female'],
+            snackbar: false,
+            timeout: 2000,
+            snackbarText: "",
         }
     },
     methods: {
         processAppt: function() {
             console.log(this.fullName, this.phoneNumber, this.condition, this.selectedClinic, this.date, this.selectedGender)
+            this.snackbar = true
+            this.snackbarText = "Appointment has been booked!"
         }
     }
 }
